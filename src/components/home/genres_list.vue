@@ -1,5 +1,11 @@
 <template>
   <v-card rounded>
+    <v-toolbar>
+      <v-toolbar-title>التصنيفات</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+    </v-toolbar>
+
     <v-list class="lighten-3" rounded>
       <v-list-item v-for="(genre, i) in genres" :key="i" link>
         <v-list-item-content>

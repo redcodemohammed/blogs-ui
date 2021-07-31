@@ -1,5 +1,10 @@
 <template>
   <v-card min-height="100vh" rounded="lg">
+    <v-toolbar>
+      <v-toolbar-title>احدث القصص</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+    </v-toolbar>
     <v-container fluid>
       <v-row dense>
         <v-col

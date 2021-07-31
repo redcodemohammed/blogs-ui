@@ -1,6 +1,6 @@
 <template>
   <v-card rounded>
-    <v-toolbar dark>
+    <v-toolbar>
       <v-toolbar-title>بين ثنايا</v-toolbar-title>
 
       <v-spacer></v-spacer>

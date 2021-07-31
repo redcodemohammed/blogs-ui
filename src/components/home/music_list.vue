@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto">
-    <v-toolbar dark>
+    <v-toolbar>
       <v-toolbar-title>الصوتيات</v-toolbar-title>
 
       <v-spacer></v-spacer>
