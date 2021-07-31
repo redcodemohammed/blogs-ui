@@ -1,19 +1,12 @@
 <template>
-  <v-app-bar
-    app
-    color="white"
-    shrink-on-scroll
+  <v-app-bar app flat elevate-on-scroll>
+    <!-- shrink-on-scroll
     elevate-on-scroll
-    prominent
-    src="https://picsum.photos/1920/1080?random"
-    fade-img-on-scroll
-    scroll-threshold="300"
-  >
+    fade-img-on-scroll -->
+    <!-- src="https://picsum.photos/1920/1080?random" -->
     <template v-slot:img="{ props }">
-      <v-img
-        v-bind="props"
-        gradient="to top right, rgba(212, 179, 157,0.7), rgba(168, 123, 111, 0.7)"
-      ></v-img>
+      <!-- gradient="to top right, rgba(212, 179, 157,0.7), rgba(168, 123, 111, 0.7)" -->
+      <v-img v-bind="props"></v-img>
     </template>
 
     <v-app-bar-nav-icon></v-app-bar-nav-icon>

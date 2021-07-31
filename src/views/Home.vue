@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" md="8">
-        <v-sheet min-height="100vh" rounded="lg" color="transparent">
+      <v-col cols="12" md="8" order-md="1" order="0">
+        <v-card min-height="100vh" rounded="lg">
           <v-container fluid>
             <v-row dense>
               <v-col
@@ -23,14 +23,14 @@
               </v-col>
             </v-row>
           </v-container>
-        </v-sheet>
+        </v-card>
       </v-col>
 
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="4" order-md="0" order="1">
         <v-row>
           <v-col cols="12">
             <v-card rounded>
-              <v-list color="#A87B6F" class="lighten-3" rounded>
+              <v-list class="lighten-3" rounded>
                 <v-list-item v-for="(genre, i) in genres" :key="i" link>
                   <v-list-item-content>
                     <v-list-item-title class="pa-1">
@@ -50,7 +50,63 @@
             </v-card>
           </v-col>
         </v-row>
+        <v-row>
+          <v-col cols="12">
+            <v-card class="mx-auto">
+              <v-toolbar dark>
+                <v-toolbar-title>الصوتيات</v-toolbar-title>
 
+                <v-spacer></v-spacer>
+
+                <v-btn icon>
+                  <v-icon>mdi-magnify</v-icon>
+                </v-btn>
+              </v-toolbar>
+
+              <v-list three-line>
+                <v-subheader v-text="'الاحدث'"></v-subheader>
+                <template v-for="(song, index) in songs">
+                  <v-divider
+                    v-if="song.divider"
+                    :key="index"
+                    class="mx-2"
+                  ></v-divider>
+
+                  <v-list-item v-else :key="song.title">
+                    <v-list-item-avatar>
+                      <v-img :src="song.avatar"></v-img>
+                    </v-list-item-avatar>
+
+                    <v-list-item-content>
+                      <v-list-item-title
+                        v-html="song.title"
+                      ></v-list-item-title>
+                      <v-list-item-subtitle>
+                        <v-row justify="center">
+                          <v-col cols="3">
+                            <v-btn color="red" icon>
+                              <v-icon>mdi-play-box</v-icon>
+                            </v-btn>
+                          </v-col>
+                          <v-col cols="3">
+                            <v-btn color="green" icon>
+                              <v-icon>mdi-download-box</v-icon>
+                            </v-btn>
+                          </v-col>
+                          <v-col cols="3">
+                            <v-btn color="blue" icon>
+                              <v-icon>mdi-share-circle</v-icon>
+                            </v-btn>
+                          </v-col>
+                        </v-row>
+                      </v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+                </template>
+              </v-list>
+            </v-card>
+          </v-col>
+        </v-row>
         <v-row>
           <v-col cols="12">
             <in-between />
@@ -113,6 +169,19 @@ export default {
         is_saved: false,
         is_fav: false,
         tags: [],
+      },
+    ],
+    songs: [
+      {
+        avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
+        title: "Brunch this weekend",
+        subtitle: `Ali Connors I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+      },
+      { divider: true, inset: true },
+      {
+        avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
+        title: "Summer BBQ 4",
+        subtitle: `to Alex, Scott, Jennifer Wish I could come, but I'm out of town this weekend.`,
       },
     ],
   }),

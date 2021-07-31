@@ -1,6 +1,10 @@
 <template>
-  <v-card class="pa-3" color="#A87B6F" rounded>
-    <v-card-title primary-title> بين ثنايا </v-card-title>
+  <v-card rounded>
+    <v-toolbar dark>
+      <v-toolbar-title>بين ثنايا</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+    </v-toolbar>
     <v-card-text>
       <v-treeview
         open-on-click

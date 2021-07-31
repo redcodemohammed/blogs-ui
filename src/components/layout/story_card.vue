@@ -1,5 +1,5 @@
 <template>
-  <v-card color="#A6A5A2">
+  <v-card>
     <v-img
       :src="src"
       class="white--text align-end"
@@ -28,7 +28,6 @@
           :class="{ 'mx-3': i > 0 }"
           link
           to="/genres/khawater"
-          color="#a36841"
           >{{ tag }}</v-chip
         >
       </div>

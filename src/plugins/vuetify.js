@@ -12,6 +12,6 @@ export default new Vuetify({
         background: '#D4B39D',
       },
     },
-    // dark: true
+    dark: true
   },
 });
