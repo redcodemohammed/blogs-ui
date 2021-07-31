@@ -9,7 +9,10 @@
       <v-container fluid>
         <router-view></router-view>
       </v-container>
-
+      <add-story-form
+        :active="add_forms.story"
+        @close="() => (add_forms.story = false)"
+      />
       <v-speed-dial
         v-model="floating_button"
         v-if="is_logged_in"
@@ -26,6 +29,7 @@
             <v-icon v-else>mdi-plus</v-icon>
           </v-btn>
         </template>
+
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
             <v-btn fab dark small color="green" v-bind="attrs" v-on="on">
@@ -37,22 +41,24 @@
 
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
-            <v-btn fab dark small color="indigo" v-bind="attrs" v-on="on">
+            <v-btn
+              @click="add_forms.story = true"
+              fab
+              dark
+              small
+              color="indigo"
+              v-bind="attrs"
+              v-on="on"
+            >
               <v-icon>mdi-pen-plus</v-icon>
             </v-btn>
           </template>
           <span>قصة جديدة</span>
         </v-tooltip>
-
-        <!-- <v-btn fab dark small color="red">
-          <v-icon>mdi-delete</v-icon>
-        </v-btn> -->
       </v-speed-dial>
     </v-main>
 
-    <!-- <v-footer app>
-
-    </v-footer> -->
+    <footer-c />
     <v-snackbar timeout="-1" bottom :value="alert.is_shown" multi-line>
       {{ alert.text }}
 
@@ -89,10 +95,12 @@
 
 <script>
 import appbar from "./components/layout/appbar.vue";
+import add_story_form from "./components/layout/add_story_form.vue";
+import footer from "./components/layout/footer.vue";
 
 export default {
   name: "App",
-  components: { appbar },
+  components: { appbar, "add-story-form": add_story_form, "footer-c": footer },
   computed: {
     is_logged_in() {
       // TODO: check if the user is logged in
@@ -107,6 +115,9 @@ export default {
   },
   data: () => ({
     floating_button: false,
+    add_forms: {
+      story: false,
+    },
   }),
 };
 </script>

@@ -1,38 +1,40 @@
 <template>
-  <v-card>
-    <v-img
-      :src="src"
-      class="white--text align-end"
-      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,0.5)"
-      :height="height"
-    >
-      <v-card-title v-text="title"></v-card-title>
-    </v-img>
-    <v-card-actions>
-      <v-btn color="blue" icon>
-        <v-icon>mdi-share-variant-outline</v-icon>
-      </v-btn>
-      <v-btn @click="toggle_saved" color="green" icon>
-        <v-icon>{{
-          is_saved ? "mdi-bookmark" : "mdi-bookmark-outline"
-        }}</v-icon>
-      </v-btn>
-      <v-btn color="red" icon @click="toggle_fav">
-        <v-icon>{{ is_fav ? "mdi-heart" : "mdi-heart-outline" }}</v-icon>
-      </v-btn>
+  <v-hover v-slot="{ hover }">
+    <v-card :elevation="hover ? 5 : 1">
+      <v-img
+        :src="src"
+        class="white--text align-end"
+        gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,0.5)"
+        :height="height"
+      >
+        <v-card-title v-text="title"></v-card-title>
+      </v-img>
+      <v-card-actions>
+        <v-btn color="blue" icon>
+          <v-icon>mdi-share-variant-outline</v-icon>
+        </v-btn>
+        <v-btn @click="toggle_saved" color="green" icon>
+          <v-icon>{{
+            is_saved ? "mdi-bookmark" : "mdi-bookmark-outline"
+          }}</v-icon>
+        </v-btn>
+        <v-btn color="red" icon @click="toggle_fav">
+          <v-icon>{{ is_fav ? "mdi-heart" : "mdi-heart-outline" }}</v-icon>
+        </v-btn>
 
-      <div class="chips">
-        <v-chip
-          v-for="(tag, i) in tags"
-          :key="i"
-          :class="{ 'mx-3': i > 0 }"
-          link
-          :to="tag.to"
-          >{{ tag.text }}</v-chip
-        >
-      </div>
-    </v-card-actions>
-  </v-card>
+        <div class="chips">
+          <v-chip
+            v-for="(tag, i) in tags"
+            :key="i"
+            :class="{ 'mx-3': i > 0 }"
+            link
+            :to="tag.to"
+            >{{ tag.text }}</v-chip
+          >
+        </div>
+      </v-card-actions>
+    </v-card>
+  </v-hover>
 </template>
 <script>
 export default {
