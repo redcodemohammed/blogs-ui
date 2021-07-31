@@ -10,9 +10,44 @@
         <router-view></router-view>
       </v-container>
 
-      <v-btn v-if="is_logged_in" fab dark fixed bottom left color="">
-        <v-icon dark>mdi-plus</v-icon>
-      </v-btn>
+      <v-speed-dial
+        v-model="floating_button"
+        v-if="is_logged_in"
+        fab
+        dark
+        fixed
+        bottom
+        left
+        direction="right"
+      >
+        <template v-slot:activator>
+          <v-btn v-model="floating_button" dark fab>
+            <v-icon v-if="floating_button"> mdi-close </v-icon>
+            <v-icon v-else>mdi-plus</v-icon>
+          </v-btn>
+        </template>
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn fab dark small color="green" v-bind="attrs" v-on="on">
+              <v-icon>mdi-music-note-plus</v-icon>
+            </v-btn>
+          </template>
+          <span>اغنية جديدة</span>
+        </v-tooltip>
+
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn fab dark small color="indigo" v-bind="attrs" v-on="on">
+              <v-icon>mdi-pen-plus</v-icon>
+            </v-btn>
+          </template>
+          <span>قصة جديدة</span>
+        </v-tooltip>
+
+        <!-- <v-btn fab dark small color="red">
+          <v-icon>mdi-delete</v-icon>
+        </v-btn> -->
+      </v-speed-dial>
     </v-main>
 
     <!-- <v-footer app>
@@ -70,5 +105,8 @@ export default {
       return this.$vuetify.theme.dark ? "dark" : "light";
     },
   },
+  data: () => ({
+    floating_button: false,
+  }),
 };
 </script>

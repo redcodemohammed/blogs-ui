@@ -43,7 +43,7 @@ export default {
         flex: 12,
         is_saved: false,
         is_fav: false,
-        tags: ["قصة قصيرة"],
+        tags: [{ text: "قصص قصيرة", to: "/genres/short_stories" }],
       },
       {
         title: "أجهزة عصبية",

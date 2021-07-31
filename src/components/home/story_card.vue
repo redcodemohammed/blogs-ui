@@ -27,8 +27,8 @@
           :key="i"
           :class="{ 'mx-3': i > 0 }"
           link
-          to="/genres/khawater"
-          >{{ tag }}</v-chip
+          :to="tag.to"
+          >{{ tag.text }}</v-chip
         >
       </div>
     </v-card-actions>
