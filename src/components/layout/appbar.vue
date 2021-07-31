@@ -6,7 +6,7 @@
 
     <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-    <v-app-bar-title>عنوان</v-app-bar-title>
+    <v-app-bar-title>ماذا عن جين اودري</v-app-bar-title>
 
     <v-spacer></v-spacer>
 
@@ -32,3 +32,9 @@ export default {
   }),
 };
 </script>
+<style>
+.v-app-bar-title__placeholder,
+.v-app-bar-title__content {
+  text-overflow: unset;
+}
+</style>
