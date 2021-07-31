@@ -4,7 +4,7 @@
       :src="src"
       class="white--text align-end"
       gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,0.5)"
-      height="200px"
+      :height="height"
     >
       <v-card-title v-text="title"></v-card-title>
     </v-img>
@@ -44,6 +44,7 @@ export default {
     tags: { type: Array, default: () => [] },
     is_fav: { type: Boolean, default: false },
     is_saved: { type: Boolean, default: false },
+    height: { type: String, default: "200px" },
   },
 
   methods: {
