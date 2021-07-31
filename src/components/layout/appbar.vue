@@ -15,10 +15,6 @@
     </v-btn>
 
     <v-btn icon>
-      <v-icon>mdi-heart</v-icon>
-    </v-btn>
-
-    <v-btn icon>
       <v-icon>mdi-dots-vertical</v-icon>
     </v-btn>
   </v-app-bar>
@@ -35,6 +31,6 @@ export default {
 <style>
 .v-app-bar-title__placeholder,
 .v-app-bar-title__content {
-  text-overflow: unset;
+  text-overflow: unset !important;
 }
 </style>
