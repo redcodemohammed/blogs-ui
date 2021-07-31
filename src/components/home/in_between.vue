@@ -38,7 +38,7 @@ export default {
           { id: 8, name: "مارس" },
         ],
       },
-    ],
+    ], // TODO: get items from api
   }),
 };
 </script>

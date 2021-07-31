@@ -77,7 +77,7 @@ export default {
         is_fav: false,
         tags: [],
       },
-    ],
+    ], // TODO: get stories from api
   }),
   methods: {
     toggle_fav(id) {

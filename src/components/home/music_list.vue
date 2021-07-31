@@ -63,7 +63,7 @@ export default {
         title: "Summer BBQ 4",
         subtitle: `to Alex, Scott, Jennifer Wish I could come, but I'm out of town this weekend.`,
       },
-    ],
+    ], //TODO: get music list from api
   }),
 };
 </script>

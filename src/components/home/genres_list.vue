@@ -29,7 +29,7 @@
 export default {
   name: "genres_list",
   data: () => ({
-    genres: ["تصنيف 1", "تصنيف 2"],
+    genres: ["تصنيف 1", "تصنيف 2"], // TODO: fetch genres from api
   }),
 };
 </script>
