@@ -28,8 +28,8 @@
             :key="i"
             :class="{ 'mx-3': i > 0 }"
             link
-            :to="tag.to"
-            >{{ tag.text }}</v-chip
+            :to="tag"
+            >{{ tag }}</v-chip
           >
         </div>
       </v-card-actions>

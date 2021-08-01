@@ -70,7 +70,7 @@
 
       <template v-slot:append v-if="is_logged_in">
         <div class="pa-2">
-          <v-btn block> Logout </v-btn>
+          <v-btn block link to="/logout"> تسجيل الخروج </v-btn>
         </div>
       </template>
     </v-navigation-drawer>
@@ -83,7 +83,7 @@ export default {
     drawer: false,
     all_menu_option: [
       { title: "اعدادات الموقع", to: "/site-settings", require_auth: true },
-      { title: "تسجيل الخروج", to: "/log-out", require_auth: true },
+      { title: "تسجيل الخروج", to: "/logout", require_auth: true },
       { title: "تسجيل الدخول", to: "/login", require_auth: false },
     ],
     drawer_links: [

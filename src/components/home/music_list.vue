@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto">
+  <v-card class="mx-auto" v-if="false">
     <v-toolbar>
       <v-toolbar-title>الصوتيات</v-toolbar-title>
 

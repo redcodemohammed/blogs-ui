@@ -1,5 +1,5 @@
 <template>
-  <v-card rounded>
+  <v-card rounded v-if="false">
     <v-toolbar>
       <v-toolbar-title>بين ثنايا</v-toolbar-title>
 
