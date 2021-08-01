@@ -53,10 +53,10 @@
 
       <v-list>
         <v-list-item
-          :to="link.to"
           v-for="(link, index) in drawer_links"
-          :key="index"
           link
+          :to="link.to"
+          :key="index"
         >
           <v-list-item-icon>
             <v-icon>{{ link.icon }}</v-icon>
@@ -68,7 +68,7 @@
         </v-list-item>
       </v-list>
 
-      <template v-slot:append>
+      <template v-slot:append v-if="is_logged_in">
         <div class="pa-2">
           <v-btn block> Logout </v-btn>
         </div>
@@ -81,13 +81,27 @@ export default {
   name: "appbar",
   data: () => ({
     drawer: false,
-    menu_option: [{ title: "اعدادات الموقع", to: "/site-settings" }],
+    all_menu_option: [
+      { title: "اعدادات الموقع", to: "/site-settings", require_auth: true },
+      { title: "تسجيل الخروج", to: "/log-out", require_auth: true },
+      { title: "تسجيل الدخول", to: "/login", require_auth: false },
+    ],
     drawer_links: [
       { title: "الصفحة الرئيسية", icon: "mdi-home", to: "/" },
       { title: "العناصر المفضلة", icon: "mdi-heart", to: "/fav" },
       { title: "العناصر المحفوضة", icon: "mdi-bookmark", to: "/saved" },
     ],
   }),
+  computed: {
+    is_logged_in() {
+      return this.$store.getters.is_logged_in;
+    },
+    menu_option() {
+      return this.is_logged_in
+        ? this.all_menu_option.filter((item) => item.require_auth)
+        : this.all_menu_option.filter((item) => !item.require_auth);
+    },
+  },
 };
 </script>
 <style>

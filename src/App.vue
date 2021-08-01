@@ -104,8 +104,7 @@ export default {
   components: { appbar, "add-story-form": add_story_form, "footer-c": footer },
   computed: {
     is_logged_in() {
-      // TODO: check if the user is logged in
-      return true;
+      return this.$store.getters.is_logged_in;
     },
     alert() {
       return this.$store.getters.alert;

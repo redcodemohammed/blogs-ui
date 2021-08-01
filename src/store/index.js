@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import auth_module from "./auth";
+
 Vue.use(Vuex)
 
 let timeout = null;
@@ -36,5 +38,6 @@ export default new Vuex.Store({
     }
   },
   modules: {
+    auth_module
   }
 })
