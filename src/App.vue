@@ -22,6 +22,7 @@
         bottom
         left
         direction="right"
+        open-on-hover
       >
         <template v-slot:activator>
           <v-btn v-model="floating_button" dark fab>

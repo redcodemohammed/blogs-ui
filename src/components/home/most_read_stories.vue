@@ -5,7 +5,7 @@
 
       <v-spacer></v-spacer>
     </v-toolbar>
-    <v-carousel cycle>
+    <v-carousel cycle interval="8000">
       <v-carousel-item v-for="(story, index) in stories" :key="index">
         <story-card
           :id="index.toString()"

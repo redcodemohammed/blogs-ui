@@ -1,6 +1,6 @@
 <template>
   <header>
-    <v-app-bar app flat elevate-on-scroll>
+    <v-app-bar app flat elevate-on-scroll hide-on-scroll>
       <template v-slot:img="{ props }">
         <v-img v-bind="props"></v-img>
       </template>
