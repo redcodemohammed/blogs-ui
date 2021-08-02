@@ -1,6 +1,6 @@
 <template>
   <v-hover v-slot="{ hover }">
-    <v-card :elevation="hover ? 5 : 1" link :to="`/story/${id}`">
+    <v-card :elevation="hover ? 5 : 1">
       <v-img
         :src="src"
         class="white--text align-end"
@@ -21,7 +21,8 @@
         <v-btn color="red" icon @click="toggle_fav">
           <v-icon>{{ is_fav ? "mdi-heart" : "mdi-heart-outline" }}</v-icon>
         </v-btn>
-
+        <v-spacer></v-spacer>
+        <v-btn text link :to="`/story/${id}`" color="yellow">اقرا</v-btn>
         <div class="chips">
           <v-chip
             v-for="(tag, i) in tags"

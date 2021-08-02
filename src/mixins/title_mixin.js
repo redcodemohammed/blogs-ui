@@ -5,7 +5,8 @@ function getTitle(vm) {
       ? title.call(vm)
       : title
   }
-} export default {
+}
+export default {
   created() {
     const title = getTitle(this)
     if (title) {
