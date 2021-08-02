@@ -43,6 +43,7 @@ import stories_list from "../components/home/stories_list.vue";
 import most_read_stories from "../components/home/most_read_stories.vue";
 
 export default {
+  title: "ماذا عن جين اودري؟",
   name: "Home",
 
   components: {

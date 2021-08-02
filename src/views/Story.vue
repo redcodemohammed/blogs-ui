@@ -50,6 +50,7 @@ export default {
       });
     } else {
       this.blog = res_data.data.blog;
+      document.title = this.blog.title;
     }
     this.is_loading = false;
   },

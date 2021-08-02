@@ -4,10 +4,11 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import api from "./plugins/api";
+import titleMixin from './mixins/title_mixin'
 
 
 Vue.config.productionTip = false
-
+Vue.mixin(titleMixin)
 Vue.prototype.$api = api;
 
 new Vue({

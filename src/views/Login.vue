@@ -38,6 +38,7 @@
 </template>
 <script>
 export default {
+  title: "تسجيل الدخول",
   name: "login-view",
   data: () => ({
     is_loading: false,
