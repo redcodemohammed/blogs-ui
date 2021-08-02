@@ -1,6 +1,6 @@
 <template>
   <v-hover v-slot="{ hover }">
-    <v-card :elevation="hover ? 5 : 1">
+    <v-card :elevation="hover ? 5 : 1" link :to="`/story/${id}`">
       <v-img
         :src="src"
         class="white--text align-end"

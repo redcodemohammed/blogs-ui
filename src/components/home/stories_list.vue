@@ -15,7 +15,7 @@
             :cols="story.flex"
           >
             <story-card
-              :id="index.toString()"
+              :id="story.id"
               :src="story.src"
               :title="story.title"
               :is_saved="story.is_saved"

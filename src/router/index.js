@@ -19,6 +19,11 @@ const routes = [
     path: '/logout',
     name: 'Logout',
     component: () => import('../views/Logout.vue')
+  },
+  {
+    path: '/story/:id',
+    name: 'Story',
+    component: () => import('../views/Story.vue')
   }
 ]
 
