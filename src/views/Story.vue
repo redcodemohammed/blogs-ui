@@ -12,7 +12,10 @@
             <v-card-title>{{ blog.title }}</v-card-title>
           </v-img>
 
-          <v-card-text class="body-1 text-right" v-text="blog.body">
+          <v-card-text
+            class="body-1 text-right"
+            v-html="blog.body.split('@new_line@').join('<br\>')"
+          >
           </v-card-text>
         </v-card>
       </v-col>

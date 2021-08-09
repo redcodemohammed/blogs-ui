@@ -71,7 +71,6 @@ export default {
   },
   methods: {
     toggle_fav(id) {
-      // TODO: save the story to local storage
       this.stories = this.stories.map((story) => {
         if (story.id == id) {
           story.is_fav = !story.is_fav;
@@ -97,7 +96,6 @@ export default {
       });
     },
     toggle_saved(id) {
-      // TODO: save the story to local storage
       this.stories = this.stories.map((story) => {
         if (story.id == id) {
           story.is_saved = !story.is_saved;

@@ -5,7 +5,7 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import api from "./plugins/api";
 import titleMixin from './mixins/title_mixin'
-
+import "./plugins/firebase";
 
 Vue.config.productionTip = false
 Vue.mixin(titleMixin)
